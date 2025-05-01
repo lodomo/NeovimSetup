@@ -10,6 +10,33 @@ return {
                         require("telescope.themes").get_dropdown({}),
                     },
                 },
+                defaults = {
+                    file_ignore_patterns = {
+                        "%.aseprite$",
+                        "%.png$",
+                        "%.jpg$",
+                        "%.jpeg$",
+                        "%.gif$",
+                        "%.webp$",
+                        "%.ico$",
+                        "%.svg$",
+                        "%.tiff$",
+                        "%.tif$",
+                        "%.bmp$",
+                        "%.webm$",
+                        "%.mp4$",
+                        "%.mkv$",
+                        "%.avi$",
+                        "%.mov$",
+                        "%.wmv$",
+                        "%.flv$",
+                        "%.mp3$",
+                        "%.wav$",
+                        "%.ogg$",
+                        "%.flac$",
+                        "%.opus$",
+                    }
+                },
             })
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
@@ -17,10 +44,10 @@ return {
             vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
             vim.keymap.set("n", "<leader>fh", function()
                 builtin.find_files({
-                    hidden = true,               -- Show hidden files
-                    follow = true,               -- Follow symlinks
-                    no_ignore = true,            -- Don't ignore anything except .git
-                    file_ignore_patterns = { ".git/", "node_modules/" } -- Exclude the .git directory
+                    hidden = true,    -- Show hidden files
+                    follow = true,    -- Follow symlinks
+                    no_ignore = true, -- Don't ignore anything except .git
+                    file_ignore_patterns = { ".git/", "node_modules/" }
                 })
             end, {})
             require("telescope").load_extension("ui-select")
