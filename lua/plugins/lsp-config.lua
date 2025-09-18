@@ -39,7 +39,19 @@ return {
                 },
             })
 
-            lspconfig.pylsp.setup({})
+            lspconfig.pylsp.setup({
+                  settings = {
+                        pylsp = {
+                          plugins = {
+                            pycodestyle = {
+                              enabled = true,
+                              ignore = {"E303"},  -- ignore E303 because Qmd fucks up
+                              maxLineLength = 100,
+                            },
+                          },
+                        },
+                      },
+            })
             lspconfig.clangd.setup({})
             lspconfig.bashls.setup({})
 

@@ -35,6 +35,7 @@ return {
                         "%.ogg$",
                         "%.flac$",
                         "%.opus$",
+                        "%.fnt$",
                     }
                 },
             })
